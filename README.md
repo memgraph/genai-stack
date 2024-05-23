@@ -5,7 +5,7 @@ This demo is a template for building GenAI applications with Memgraph.
 
 ## Start the app
 
-To chat with Memgraph via OpenAI, create the `.env` file in the `genai` directory and set your OpenAI API key:
+To chat with Memgraph via OpenAI, create the `.env` file in the root directory and set your OpenAI API key:
 ```
 OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ```
@@ -19,10 +19,10 @@ A dataset needs to be loaded in Memgraph before the backend is started in order 
 
 This demo offers querying Memgraph with natural language via LangChain utilizing two different models:
 
-- [OpenAI GPT-4](#ask-memgraph-with-openai-gpt-4)
+- [OpenAI GPT-4](#ask-memgraph-with-gpt-4)
 - [Ollama Llama 3](#ask-memgraph-with-llama-3)
 
-## Ask Memgraph with OpenAI GPT-4
+## Ask Memgraph with GPT-4
 
 Ask Memgraph with OpenAI GPT-4 model:
 ```
