@@ -9,7 +9,7 @@ USER = os.getenv("NEO4J_USER", "")
 PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 
 
-class LangChainHandler:
+class GptHandler:
     def __init__(self):
         self.graph = MemgraphGraph(
             url=URI,
@@ -36,4 +36,4 @@ class LangChainHandler:
         return final_answer
 
 
-langchain_handler = LangChainHandler()
+gpt_handler = GptHandler()

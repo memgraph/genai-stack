@@ -28,7 +28,7 @@ This demo offers querying Memgraph with the natural language via LangChain utili
 
 Ask Memgraph with GPT-4 model:
 ```
-curl -X POST "http://localhost:8000/ask/openai" -H "Content-Type: application/json" -d '{"question": "How many seasons there are?"}'
+curl -X POST "http://localhost:8000/ask/gpt" -H "Content-Type: application/json" -d '{"question": "How many seasons there are?"}'
 ```
 
 Here is the response:
@@ -40,7 +40,7 @@ Here is the response:
 
 Ask Memgraph with Llama3 model:
 ```
-curl -X POST "http://localhost:8000/ask/ollama" -H "Content-Type: application/json" -d '{"question": "How many seasons there are?"}' 
+curl -X POST "http://localhost:8000/ask/llama" -H "Content-Type: application/json" -d '{"question": "How many seasons there are?"}' 
 ```
 
 Here is the response:

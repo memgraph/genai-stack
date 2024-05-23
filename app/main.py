@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from app.database import db
 from app import schemas
-from app.langchain_handler import langchain_handler
-from app.ollama_handler import ollama_handler
+from app.gpt_handler import gpt_handler
+from app.llama_handler import llama_handler
 import logging
 
 
@@ -26,15 +26,15 @@ async def startup_event():
         raise e
 
 
-# ask Memgraph via OpenAI
-@app.post("/ask/openai", response_model=schemas.QuestionResponse)
+# ask Memgraph via GPT
+@app.post("/ask/gpt", response_model=schemas.QuestionResponse)
 def ask_question(question: schemas.Question):
-    response = langchain_handler.get_response(question.question)
+    response = gpt_handler.get_response(question.question)
     return {"question": question.question, "response": response}
 
 
-# ask Memgraph via Ollama
-@app.post("/ask/ollama", response_model=schemas.QuestionResponse)
+# ask Memgraph via Llama
+@app.post("/ask/llama", response_model=schemas.QuestionResponse)
 def ask_question(question: schemas.Question):
-    response = ollama_handler.get_response(question.question)
+    response = llama_handler.get_response(question.question)
     return {"question": question.question, "response": response["result"]}

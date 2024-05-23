@@ -9,7 +9,7 @@ USER = os.getenv("NEO4J_USER", "")
 PASSWORD = os.getenv("NEO4J_PASSWORD", "")
 
 
-class OllamaHandler:
+class LlamaHandler:
     def __init__(self):
         self.graph = MemgraphGraph(
             url=URI,
@@ -35,4 +35,4 @@ class OllamaHandler:
         return final_answer
 
 
-ollama_handler = OllamaHandler()
+llama_handler = LlamaHandler()
