@@ -1,0 +1,8 @@
+langchain==0.2.0
+langchain-openai==0.1.7
+langchain-community==0.2.0
+neo4j==5.20.0
+fastapi==0.111.0
+uvicorn==0.29.0
+pydantic==2.7.1
+ollama==0.2.0

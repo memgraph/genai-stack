@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  memgraph:
+    build:
+      context: ./memgraph
+      dockerfile: Dockerfile
+    container_name: memgraph-mage-genai
+    ports:
+      - "7687:7687"
+      - "7444:7444"
+    command: ["--log-level=TRACE", "--init-file=/usr/lib/memgraph/got-dataset.cypherl"]
+
+  lab:
+    image: memgraph/lab:latest
+    container_name: memgraph-lab-genai
+    ports:
+      - "3000:3000"
+    depends_on:
+      - memgraph
+    environment:
+      - QUICK_CONNECT_MG_HOST=memgraph
+      - QUICK_CONNECT_MG_PORT=7687
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi-app
+    ports:
+      - "8000:8000"
+    environment:
+      - NEO4J_URI=bolt://memgraph:7687
+      - NEO4J_USERNAME=""
+      - NEO4J_PASSWORD=""
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - memgraph
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
