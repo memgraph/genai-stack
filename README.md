@@ -1,5 +1,5 @@
 # Memgraph GenAI Stack
-**Docker Compose + FastAPI + LangChain + Ollama/OpenAI + Memgraph**
+**Docker Compose + FastAPI + LangChain + Ollama + Memgraph**
 
 This demo is a template for building GenAI applications with Memgraph.
 
@@ -9,7 +9,7 @@ The first three lines in the CYPHERL file are there, so the data doesn't reload 
 
 ## Start the app
 
-To chat with Memgraph via OpenAI, create the `.env` file in the root directory and set your OpenAI API key:
+To utilize `GPT-4` model, create the `.env` file in the root directory and set your OpenAI API key:
 ```
 OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ``` 
@@ -21,12 +21,12 @@ docker compose up
 
 This demo offers querying Memgraph with the natural language via LangChain utilizing two different models:
 
-- [OpenAI GPT-4](#ask-memgraph-with-gpt-4)
-- [Ollama Llama 3](#ask-memgraph-with-llama-3)
+- [GPT-4](#ask-memgraph-with-gpt-4)
+- [Llama 3](#ask-memgraph-with-llama-3)
 
 ### Ask Memgraph with GPT-4
 
-Ask Memgraph with OpenAI GPT-4 model:
+Ask Memgraph with GPT-4 model:
 ```
 curl -X POST "http://localhost:8000/ask/openai" -H "Content-Type: application/json" -d '{"question": "How many seasons there are?"}'
 ```
