@@ -9,7 +9,7 @@ services:
     ports:
       - "7687:7687"
       - "7444:7444"
-    command: ["--log-level=TRACE", "--init-file=/usr/lib/memgraph/got-dataset.cypherl"]
+    command: ["--log-level=TRACE", "--init-file=/usr/lib/memgraph/dataset.cypherl"]
 
   lab:
     image: memgraph/lab:latest

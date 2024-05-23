@@ -2,6 +2,6 @@ FROM memgraph/memgraph-mage:latest
 
 USER root
  
-COPY got-dataset.cypherl /usr/lib/memgraph/got-dataset.cypherl
+COPY dataset.cypherl /usr/lib/memgraph/dataset.cypherl
  
 USER memgraph
