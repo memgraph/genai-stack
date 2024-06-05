@@ -3,6 +3,10 @@
 
 This demo is a template for building GenAI applications with Memgraph.
 
+## App architecture
+
+![genai-stack](./memgraph-gen-ai-stack.png)
+
 ## Dataset 
 In order for schema to be generated, a dataset needs to be loaded in Memgraph before the application is started. The Game of Thrones dataset is preloaded in this demo. To preload your own dataset, update the `dataset.cypherl` file.
 The first three lines in the CYPHERL file are there, so the data doesn't reload on each run. (`STORAGE MODE IN_MEMORY_ANALYTICAL; DROP GRAPH; STORAGE MODE IN_MEMORY_TRANSACTIONAL;`)
