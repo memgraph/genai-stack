@@ -7,10 +7,10 @@ services:
     ports:
       - "7687:7687"
       - "7444:7444"
-    command: ["--log-level=TRACE", "--init-file=/usr/lib/memgraph/dataset.cypherl"]
+    command: ["--log-level=TRACE", "--init-file=/usr/lib/memgraph/dataset.cypherl", "--schema-info-enabled=True"]
 
   lab:
-    image: memgraph/lab:latest
+    image: memgraph/lab:3.0.0
     container_name: memgraph-lab-genai
     ports:
       - "3000:3000"
